@@ -80,7 +80,7 @@ def feeling(check):
     return check
 
 def www(data):
-    animal = neww
+    animal = data2
     https = urllib.urlopen(http + animal)
     data = bs4.BeautifulSoup(https.read())
     return data 
@@ -107,11 +107,11 @@ else:
     input = raw_input("Id buy you a cake to cheer you up but iv left my wallet in the other directorie so how about you tell me your favoutre animail:")
 input = " " + input + " "
 # run there answer through web checker functions to get a response 
-newwww = removestop(input)
+data1 = removestop(input)
 #print (newwww) for deburging
-neww = newwww.strip()
+data2 = data1.strip()
 #print (neww) for debug
-datasend = www(neww)
+datasend = www(data2)
 print ("Well did yu know that : ")+''.join(i + '.' for i in datasend('p')[0].getText().split('.')[:2])
 print ("sorry if that took me a while to find put us pythons arnt always the fastest code on the block , ill give you 5 seconds to read that through ")
 time.sleep(10)
@@ -120,9 +120,9 @@ while True:
         input = raw_input("Lets try another , so whats your favroute" + " " + line)
         input = " " + input + " "    
         newwww = removestop(input)
-        print (newwww) #for deburging
+        #print (newwww) #for deburging
         neww = newwww.strip()
-        print (neww) #for debug
+        #print (neww) #for debug
         datasend = wikipedia.summary(neww)
         print '.'.join(datasend.split('.')[:3])
         

@@ -5,3 +5,8 @@ celeb
 weather
 game
 pokemon
+sport
+colour
+city
+planet
+languish
