@@ -1,0 +1,4 @@
+draw is from lesson
+
+pygame audio is or the rasberry pi being conected to a ardunio play music depending on bluetooth data 
+email if any qestions
