@@ -112,7 +112,7 @@ data1 = removestop(input)
 data2 = data1.strip()
 #print (neww) for debug
 datasend = www(data2)
-print ("Well did yu know that : ")+''.join(i + '.' for i in datasend('p')[0].getText().split('.')[:2])
+print ("Well did you know that : ")+''.join(i + '.' for i in datasend('p')[0].getText().split('.')[:2])
 print ("sorry if that took me a while to find put us pythons arnt always the fastest code on the block , ill give you 5 seconds to read that through ")
 time.sleep(10)
 while True:
