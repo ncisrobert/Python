@@ -1,7 +1,11 @@
+#import libaires 
+
 import urllib
 import bs4
 import time
 import wikipedia
+
+#open files and put into varibles
 file = open("stop-words.txt")
 stopwords = file.readlines()
 
@@ -11,7 +15,7 @@ badwords = file.readlines()
 qu = open("qestion.txt",'r')
 q = qu.readlines()
 
-
+#make some varibles 
 name = " "
 moodcheck = " "
 gcount = 0
@@ -21,7 +25,8 @@ first = False
 animal = " "
 http = "https://en.wikipedia.org/wiki/"
 https = ""
- 
+
+#make some functions  
 def removestop(message):
     for word in badwords:
         badword = word.strip()
@@ -30,6 +35,7 @@ def removestop(message):
          junk = word.strip()
          message = message.replace( " " + junk + " " , " ")
     message = message.replace( " name " , " ")
+    message = message.title()
     return message
 
 
@@ -80,22 +86,27 @@ def www(data):
     return data 
 
     
-
+#code to run
+#first qestion
 input = raw_input ("Hi there whats your name: ")
 input = " " + input + " "
 name = removestop(input)
 print("Hello " + name.strip() + " Im chatbot nice to meet you")
 
-
+#feeling check qestion uses name to strip to talk to user by there name 
 input = raw_input ("So " + name.strip() +" how are you today:")
-input = " " + input + " "
-moodcheck = feeling(input) 
+input = " " + input.lower() + " "
+
+moodcheck = feeling(input)
+
+#checking the outcome of feeling test to pick the correct reply
 print(moodcheck)
 if good == True:
     input = raw_input("Since your haveing such a nice day why dont you tell me you'r favorute animal: ")
 else:
     input = raw_input("Id buy you a cake to cheer you up but iv left my wallet in the other directorie so how about you tell me your favoutre animail:")
-input = " " + input + " "    
+input = " " + input + " "
+# run there answer through web checker functions to get a response 
 newwww = removestop(input)
 #print (newwww) for deburging
 neww = newwww.strip()
