@@ -1,0 +1,7 @@
+ice cream
+fruit
+country
+celeb
+weather
+game
+pokemon
